@@ -1,0 +1,42 @@
+﻿@model Projet_yassine.Models.Fournisseur
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Fournisseur</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FournisseurName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FournisseurName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FournisseurAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FournisseurAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FournisseurTel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FournisseurTel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseurmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fournisseurmail)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.FournisseurID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

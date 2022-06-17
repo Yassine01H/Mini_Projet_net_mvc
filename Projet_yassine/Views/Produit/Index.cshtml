@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Projet_yassine.Models.Produit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produits</h1>
+
+<p>
+  <a  asp-action="Create"> 
+      <button type="button" class="btn btn-primary"> Create New </button>
+</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitDesignation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitColeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitPrix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitQteStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitPoids)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduitTaille)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategorieProduit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fournisseur)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitDesignation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitColeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitPrix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitQteStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitPoids)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduitTaille)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategorieProduit.CategorieProduitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fournisseur.FournisseurName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProduitID"><button type="button" class="btn btn-warning">Edit</button></a> 
+                 <a asp-action="Delete" asp-route-id="@item.ProduitID"><button type="button" class="btn btn-danger">Delete</button> </a>
+                <a asp-action="Details" asp-route-id="@item.ProduitID"><button type="button" class="btn btn-success">Details</button></a>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

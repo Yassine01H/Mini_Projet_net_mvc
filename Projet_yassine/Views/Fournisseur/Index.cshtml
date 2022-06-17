@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Projet_yassine.Models.Fournisseur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fourniseur</h1>
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-primary">Create New</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FournisseurName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FournisseurAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FournisseurTel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fournisseurmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FournisseurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FournisseurAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FournisseurTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fournisseurmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FournisseurID"><button type="button" class="btn btn-warning">Edit</button></a>
+                <a asp-action="Delete" asp-route-id="@item.FournisseurID"><button type="button" class="btn btn-danger">Delete</button></a>
+                <a asp-action="Details" asp-route-id="@item.FournisseurID"><button type="button" class="btn btn-success">Details</button></a> 
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
